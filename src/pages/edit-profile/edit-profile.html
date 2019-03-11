@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-navbar color="royallight">
+      <ion-title>{{title}}</ion-title>
+      <!-- <ion-buttons id="left" left>
+        <button (click)="dismiss()" ion-button icon-only>
+          <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons> -->
+      <!-- <ion-buttons id="right" right>
+        <button click="globals.logout()" mode="ios" color="light" ion-button icon-only>
+          Log Out
+        </button>
+      </ion-buttons> -->
+    </ion-navbar>
+    <ion-toolbar color="royallight">
+      <ion-item left color="royallight" style="margin-top: -20px; margin-bottom: -20px; margin-left: -10px" no-margin no-lines>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2>
+              <form [formGroup]="form" (ngSubmit)="createItem()">
+              <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+              <div class="profile-image-wrapper" (click)="getPicture()">
+                <div class="profile-image-placeholder" [ngClass]="(globals.userData.photoURL) ? 'hidden' : ''" *ngIf="!this.form.controls.profilePic.value">
+                  <ion-icon color="success" name="add"></ion-icon>
+                </div>
+                <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value || globals.userData.photoURL"></div>
+              </div>
+              </form>
+            </ion-col>
+            <ion-col margin style="margin-left: 20px">
+              <h2 style="font-size: 18px; font-weight: 500">{{ editProfileForm.controls.username.value }}</h2>
+              <p>{{ globals.cutString(editProfileForm.controls.email.value, 25) }}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-toolbar> 
+  </ion-header>
+
+<ion-content overflow-scroll="false">
+  <div align="center" class="profile-header">
+  </div>
+  <form id="userForm" (ngSubmit)="editProfile(editProfileForm.value)" [formGroup]="editProfileForm" padding role="form">
+    <ion-item no-padding>
+      <ion-label stacked>Email</ion-label>
+      <ion-input disabled type="email" placeholder="Enter your email id" formControlName="email"></ion-input>
+    </ion-item>
+    
+    <ion-item no-padding>
+      <ion-label stacked>Username</ion-label>
+      <ion-input type="text" placeholder="Enter your username" formControlName="username"></ion-input>
+    </ion-item>
+    
+    <ion-item no-padding>
+      <ion-label stacked>Phone Number</ion-label>
+      <ion-input type="tel" placeholder="Enter your phone number" formControlName="mobile"></ion-input>
+    </ion-item>
+    <br />
+    <button [disabled]="editProfileForm.controls.email.invalid || editProfileForm.controls.mobile.invalid || editProfileForm.controls.username.invalid" type="submit" ion-button round color="royallight">
+      Update Profile
+    </button>
+  </form>
+</ion-content>

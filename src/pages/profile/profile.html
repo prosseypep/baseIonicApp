@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar color="royallight">
+    <ion-title>Profile</ion-title>
+    <ion-buttons id="left" left>
+      <button (click)="dismiss()" ion-button icon-only>
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons id="right" right>
+      <button (click)="editProfile('Personal Information')" mode="ios" color="light" ion-button icon-only>
+        Edit Profile
+      </button>
+      <button (click)="logout()" mode="ios" color="light" ion-button icon-only>
+        Log Out
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-navbar color="royallight">
+    <ion-item color="royallight" style="margin-top: -15px; margin-bottom: -25px !important" left no-padding no-margin no-lines>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <div class="profile-image-wrapper">
+              <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="globals.userData.photoURL"></div>
+            </div>
+          </ion-col>
+          <ion-col margin style="margin-left: 14px;">
+            <h2 style="font-size: 18px; font-weight: 500; margin-top: -3px">{{ globals.cutString(globals.userData.displayName, 25) }}</h2>
+            <p>{{ globals.cutString(globals.userData.email, 25) }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: -15px;">
+          <ion-col>
+            <ion-segment color="white" mode="wp" [(ngModel)]="profile_segment">
+              <ion-segment-button value="timeline">
+                Timeline
+              </ion-segment-button>
+              <ion-segment-button value="nysc">
+                Nysc Data
+              </ion-segment-button>
+              <ion-segment-button value="listings">
+                Connect Me
+              </ion-segment-button>
+            </ion-segment>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-navbar> 
+</ion-header>
+
+<ion-content>
+  <ion-fab top right edge>
+    <button color="white" ion-fab>
+        <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-card no-margin>
+    <ion-card-header>
+      <h2>Artocles & Activities</h2>
+      <p>50 Comments | Manage comments</p>
+    </ion-card-header>
+  
+    <ion-card-content no-padding no-margin>
+      <ion-list>
+        <ion-item mode="ios" no-lines>
+          <ion-thumbnail item-start>
+            <img src="img/thumbnail-totoro.png">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end>View</button>
+        </ion-item>
+        <ion-item mode="ios" no-lines>
+          <ion-thumbnail item-start>
+            <img src="img/thumbnail-totoro.png">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end>View</button>
+        </ion-item>
+        <ion-item mode="ios" no-lines>
+          <ion-thumbnail item-start>
+            <img src="img/thumbnail-totoro.png">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end>View</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-item align="center">
+      <h3>SEE ALL ACTIVITIES</h3>
+    </ion-item>
+  
+  </ion-card>
+</ion-content>

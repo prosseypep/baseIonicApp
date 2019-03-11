@@ -1,0 +1,28 @@
+
+<ion-content class="tutorial-page">
+    <ion-slides align="left" #mySlider (ionSlideWillChange)="slideChange()" pager>
+      <ion-slide *ngFor="let slide of slides" padding>
+        <!-- <img [src]="slide.image" class="slide-image"/> -->
+        <!-- <img class="slide-image"/> -->
+        <div class="slide-content">
+          <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+          <p [innerHTML]="slide.description"></p>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+  
+<ion-footer class="hidden" padding align="left" no-border>  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-9>
+        <h3>Get Started</h3>
+      </ion-col>
+      <ion-col align="right">
+        <button (click)="skipToHome()" clear ion-button color="white">
+          <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

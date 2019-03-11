@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "388399258478",
+    "firebase_url": "https://ac-demo-backend.firebaseio.com",
+    "project_id": "ac-demo-backend",
+    "storage_bucket": "ac-demo-backend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388399258478:android:ba280eac91c6f09c",
+        "android_client_info": {
+          "package_name": "io.ionfcm.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388399258478-gikn42cqp143p4b0oes38i6d4vj20tip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMr2VPmQiFg0rRL3MXlgazuupogok9Buo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

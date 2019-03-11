@@ -1,0 +1,34 @@
+      <ion-menu *ngIf="globals.config != undefined && globals.config.login == true" [content]="content" class="sidebar no-scroll">
+    
+        <ion-content class="bg-sidebar">
+          <ion-toolbar *ngIf="userData !== null || userData != undefined" color="royallight">
+            <ion-grid menuClose (click)="globals.gotoProfilePage()" style="position: fixed; top: 40px">
+              <ion-row>
+                <ion-col align="left">
+                  <img src="" id="profileImg" />
+                </ion-col>
+                <ion-col col-9>
+                  <h3 color="white">
+                    <small id="username"></small>
+                    <small id="email"></small>
+                  </h3>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-toolbar>
+          <ion-list>
+            <ion-list-header>Our Support</ion-list-header>
+            <button no-lines menuClose ion-item >
+              <ion-icon item-start name="help"></ion-icon>
+              Feedback
+            </button>
+            <button (click)="navigate(PrivacyPage)" no-lines menuClose ion-item >
+              <ion-icon item-start name="collection"></ion-icon>
+              Privacy Policy
+            </button>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      
+      <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+      <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

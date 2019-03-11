@@ -1,0 +1,54 @@
+page-walkthrough {
+    .tutorial-page {
+    
+        .slide-title {
+        font-size: 24px;
+        font-weight: 500;
+        text-align: left;
+        }
+    
+        .slide-image {
+        height: 30vh;
+        width: 80%;
+        margin: 0px 0;
+        border: none !important;
+        }
+    
+        p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #60646B;
+        text-align: left;
+        }
+        .swiper-pagination
+        {
+            text-align: left !important;
+            margin-left: 30px !important;
+            margin-bottom: 20px !important;
+        }
+        .slide-content
+        {
+            padding: 20px;
+        }
+    }
+    ion-footer
+    {
+        background-color: color($colors, primary);
+        color: color($colors, white) !important;
+        height: 70px;
+        h3
+        {
+            padding-top: -15px !important;
+            font-size: 23px !important;
+        }
+        button
+        {
+            position: fixed; 
+            bottom: 13px !important; 
+            right: -20px; 
+            font-size: 20px !important; 
+            font-weight: 600;
+        }
+    }
+  
+}

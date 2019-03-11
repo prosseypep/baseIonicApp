@@ -1,0 +1,41 @@
+page-edit-profile {
+    input
+    {
+      color: #333 !important;
+    }
+    .edit-btn
+    {
+      background-color: color($colors, light) !important;
+      position: fixed; margin-top: 50px; margin-left: 45px; border-radius: 100%;
+      padding: 3px 8px;
+    }
+    .profile-image-wrapper {
+  
+      .profile-image {
+        margin-top: -20px !important;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+  
+      .profile-image-placeholder {
+        margin-top: -20px !important;
+        display: inline-block;
+        background-color: #eee;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        font-size: 12px;
+        ion-icon {
+          font-size: 44px;
+          margin-bottom: -10px;
+          margin-top: 10px;
+          margin-left: 20px;
+        }
+      }
+    }
+}

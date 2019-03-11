@@ -1,0 +1,44 @@
+
+<ion-content no-margin padding class="no-scroll" no-padding overflow-scroll="false">
+  <ion-toolbar color="white">
+    <ion-buttons left>
+      <button (click)="dismiss()" ion-button icon-only>
+        <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <form [formGroup]="registerForm" padding (ngSubmit)="register(registerForm.value)" role="form">
+      <h2>Create you account</h2>
+      <p color="light">Don't want to sign up now </p>
+      <br />
+    <ion-item no-padding>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="email" placeholder="Enter your email id" formControlName="email" [ngClass]="{ 'is-invalid': registerForm.submitted && registerForm.controls.email.invalid }"></ion-input>
+    </ion-item>
+    
+    <ion-item no-padding>
+      <ion-label stacked>Password</ion-label>
+      <ion-input type="password" placeholder="Enter your password (use alphanumeric)"  formControlName="password"></ion-input>
+    </ion-item>
+    
+    <ion-item no-padding>
+      <ion-label stacked>Retype Password</ion-label>
+      <ion-input (input)="checkPassword()" type="password" placeholder="Confirm your password" formControlName="rpassword"></ion-input>
+    </ion-item>
+    <p color="invalid-feedback" *ngIf="passwordMatch == false">Password does not match</p>
+    <br />
+    <button [disabled]="registerForm.controls.email.invalid || registerForm.controls.password.invalid || registerForm.controls.rpassword.invalid || passwordMatch == false" type="submit" ion-button round color="royallight">
+      Create Your Account
+    </button>
+  </form>
+</ion-content> 
+
+<ion-footer (click)="dismiss()">
+  <ion-grid>
+    <ion-row>
+      <ion-col align="center">
+        <h4>Already have an account ?</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

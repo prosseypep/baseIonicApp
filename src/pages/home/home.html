@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar class="hidden" color="royallight" >
+    <div class="subheader">
+      <ion-searchbar class="my-page-name-searchbar animated"
+        placeholder="Search for new events"
+        auofocus
+        required
+        [(ngModel)]="gVars.search"
+        (ionCancel)="gVars.cancelSearch()"
+        (ionClear) = "gVars.cancelSearch()"
+        [showCancelButton]="true">
+      </ion-searchbar>
+    </div>
+  </ion-navbar>
+  <ion-navbar id="menu" color="royallight">
+    <ion-buttons left>
+      <button ion-button menuToggle icon-only><ion-icon ios="ios-list" md="md-menu"></ion-icon></button>
+    </ion-buttons>
+    <ion-title>
+      <span>App Name</span>
+    </ion-title>
+    <ion-buttons right>
+      <button (click)="gVars.gotoSearchPage()" ion-button icon-only><ion-icon name="search"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar> 
+  <!-- <ion-toolbar color="white" mode="md" style="z-index: 10; height: 90px;">
+    <ion-grid no-margin>
+      <ion-row>
+        <ion-col col-1 align="left">
+          <button color="white" mode="md" ion-button clear icon-only>
+            <ion-icon style="margin-left: -10px; font-size: 22px" color="success" name="ios-locate-outline"></ion-icon>
+          </button>
+          <button mode="md" color="white" ion-button clear icon-only>
+            <ion-icon style="margin-left: -7px; font-size: 22px" color="success" name="ios-pin"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-10>
+          <ion-input style="margin:0px 5px; border-bottom: 1px solid #ccc"
+            placeholder="Your Location"
+            required>
+          </ion-input>
+          <ion-input style="margin:0px 5px;" list="languages" class="animated"
+            placeholder="Choose Destination"
+            auofocus
+            required>
+            <datalist id="languages">
+              <option value="HTML">
+              <option value="CSS">
+            </datalist>
+          </ion-input>
+        </ion-col>
+        <ion-col col-1 align="right">
+          <button style="margin-top: 20px" color="white" mode="md" ion-button clear icon-only>
+            <ion-icon style="margin-left: -5px; font-size: 22px; transform: rotate(90deg)" color="dark" ios="ios-swap" md="md-swap"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content no-bounce fullscreen>
+  <!-- <error></error> -->
+  <no-content></no-content>
+  <!-- <gmap></gmap> -->
+</ion-content>

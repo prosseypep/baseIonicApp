@@ -1,0 +1,61 @@
+page-welcome {
+    color: color($colors, dark) !important;
+    ion-header
+    {
+        button
+        {
+            font-size: 18px;
+            color: color($colors, dark) !important;
+            background-color: color($colors, white) !important;
+        }
+    }
+    ion-content
+    {
+        background-image: url('../assets/bg/bg.jpeg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        // filter: grayscale(70%);
+        img
+        {
+            margin-top: 30vh !important;
+            width: 250px !important;
+        }
+    }
+    #welcome
+    {
+        h1 > small
+        {
+            font-size: 14px !important;
+        }
+        h1
+        {
+            color: color($colors, dark) !important;
+            font-size: 22px !important;
+            font-weight: 100 !important;
+            width: 100% !important;
+        }
+    }
+    ion-footer
+    {
+        background-color: transparent;
+        color: color($colors, white) !important;
+        h3 
+        {
+            font-size: 18px;
+            padding-bottom: 30px !important;
+        }
+        a
+        {
+            color: color($colors, dark);
+            margin-left: 10px !important;
+            font-weight: 700;
+        }
+        button
+        {
+            width: 85% !important;
+            margin: 10px auto !important;
+            position: relative !important;
+            font-weight: 600;
+        }
+    }
+}
